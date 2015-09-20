@@ -1,0 +1,19 @@
+
+
+h1, h2, h3{
+    font-family: Georgia, Arial, sans-serif;
+}
+
+figcaption{
+    font-family: Georgia, Arial, serif;
+    font-size: 12px;
+}
+
+p{
+    font-family: Georgia, Arial, serif;
+    font-size: 14px;
+}
+
+a{
+    font-family: inherit, Georgia, Arial, serif;
+}
