@@ -2,22 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Schedule</title>
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>My schedule at NTNU</h1>
-    <h2>Contents</h2>
-    <ul>
-        <li><a href="#timetable">Timetable</a></li>
-        <li><a href="#statistikk">Statistikk</a></li>
-        <li><a href="#webtek">WebTek</a></li>
-        <li><a href="#algdat">AlgDat</a></li>
-        <li><a href="#datadigtek">DataDigTek</a></li>
-        <li><a href="#proglab2">ProgLab 2</a></li>
-    </ul>
 
+<header id="header">
+	<h1 id="mainTitle">Schedule</h1>
+</header>
+
+<section>
+	<nav id="siteContent">
+		<header>
+			<h2>Site contents</h2>
+		</header>
+		<ul>
+			<li><a href="linkorama.html">Linkorama</a></li>
+			<li><a href="timetable.html">Schedule</a></li>
+			<li><a href="assignments.html">Assigntments</a></li>
+		</ul>
+	</nav>
+	<nav id="pageContent">
+		<header>
+    		<h2>Page contents</h2>
+		</header>
+		<ul>
+			<li><a href="#siteContent">Site contents</a></li>
+			<li><a href="#pageContent">Page contents</a></li>
+			<li><a href="#tableHeader">Timetable</a></li>
+			<li><a href="#statistikk">Statistikk</a></li>
+			<li><a href="#webtek">WebTek</a></li>
+			<li><a href="#algdat">AlgDat</a></li>
+			<li><a href="#datadigtek">DataDigTek</a></li>
+			<li><a href="#proglab2">ProgLab 2</a></li>
+		</ul>
+	</nav>
+</section>
+
+<section>
 	<table border="6">
-		<caption><h2 style="text-align:left" id="timetable"><a href="https://ntnu.1024.no/2015/fall/santih15/+">Timetable</a></h2></caption>
+		<caption><h2 id="tableHeader"><a href="https://ntnu.1024.no/2015/fall/santih15/+">Timetable</a></h2></caption>
 		<tr>
 			<th scope="col">Tidspunkt</th>
 			<th scope="col">Mandag</th>
@@ -27,7 +51,7 @@
 			<th scope="col">Fredag</th>
 		</tr>
 		<tr>
-			<th scope="row">08:15-10:00</th>
+			<th scope="row"><time>08:15-10:00</time></th>
 			<td></td>
 			<td><a href="#statistikk" >Statistikk</a></td>
 			<td></td>
@@ -35,7 +59,7 @@
 			<td><a href="#statistikk">Statistikk</a></td>
 		</tr>
 		<tr>
-			<th scope="row">10:15-12:00</th>
+			<th scope="row"><time>10:15-12:00</time></th>
 			<td><a href="#statistikk">Statistikk</a></td>
 			<td rowspan="2"><a href="#proglab2">ProgLab 2</a> </td>
 			<td> </td>
@@ -43,7 +67,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<th scope="row">12:15-14:00</th>
+			<th scope="row"><time>12:15-14:00</time></th>
 			<td><a href="#webtek">WebTek</a></td>
 
 			<td></td>
@@ -51,7 +75,7 @@
 			<td></td>
 		</tr>
 		<tr>
-			<th scope="row">14:15-16:00</th>
+			<th scope="row"><time>14:15-16:00</time></th>
 			<td><a href="#datadigtek">DataDigTek</a></td>
 			<td><a href="#algdat">AlgDat</a></td>
 			<td><a href="#webtek">WebTek</a>/<a href="#algdat">Algdat</a></td>
@@ -59,21 +83,47 @@
 			<td><a href="#datadigtek">DataDigTek</a></td>
 		</tr>
 	</table>
+</section>
 
-	<h2 id="statistikk"><a href="http://www.ntnu.no/studier/emner/TMA4240">Statistikk</a></h2>
-	<p>Teknisk matematikkfag med vekt på sannsynlighetsregning og modellering av sannsynlighetsmodeller</p>
+<section>
+	<section>
+		<header>
+			<h2 id="statistikk"><a href="http://www.ntnu.no/studier/emner/TMA4240">Statistikk</a></h2>
+		</header>
+		<p>Teknisk matematikkfag med vekt på sannsynlighetsregning og modellering av sannsynlighetsmodeller</p>
+	</section>
+	<section>
+		<header>
+			<h2 id="webtek"><a href="http://www.ntnu.no/studier/emner/IT2805">Webteknologi</a></h2>
+		</header>
+		<p>Introduksjonsfag til webdesign, inkludert HTML5, CSS3 og JS, samt generell kunnskap om ulike teknologier som brukes på web i dag.</p>
+	</section>
+	<section>
+		<header>
+			<h2 id="algdat"><a href="http://www.ntnu.no/studier/emner/TDT4120">Algoritmer og datastrukturer</a></h2>
+		</header>
+		<p>Datafag med gigantisk pensum, hvor en lærer ulike algoritmer for blant annet søk og sortering. Legger vekt på kjøretid og optimalisering av algoritmer.</p>
+	</section>
+	<section>
+		<header>
+			<h2 id="datadigtek"><a href="http://www.ntnu.no/studier/emner/TDT4160">Datamaskiner og digitalteknikk</a></h2>
+		</header>
+		<p>Fag som tar for seg et høyere abstraksjonsnivå av datamaskiners oppbygning enn "Krets- og digital-teknikk".</p>
+	</section>
+	<section>
+		<header>
+    		<h2 id="proglab2"><a href="https://www.ntnu.no/studier/emner/TDT4113">Programmeringsprosjekt for datateknologi (ProgLab 2)</a></h2>
+		</header>
+		<p>Motivasjonsfag for studenter på datateknologi hvor en skal lære at programmering er både gøy og nyttig.</p>
+</section>
 
-	<h2 id="webtek"><a href="http://www.ntnu.no/studier/emner/IT2805">Webteknologi</a></h2>
-	<p>Introduksjonsfag til webdesign, inkludert HTML5, CSS3 og JS, samt generell kunnskap om ulike teknologier som brukes på web i dag.</p>
-
-	<h2 id="algdat"><a href="http://www.ntnu.no/studier/emner/TDT4120">Algoritmer og datastrukturer</a></h2>
-	<p>Datafag med gigantisk pensum, hvor en lærer ulike algoritmer for blant annet søk og sortering. Legger vekt på kjøretid og optimalisering av algoritmer.</p>
-
-	<h2 id="datadigtek"><a href="http://www.ntnu.no/studier/emner/TDT4160">Datamaskiner og digitalteknikk</a></h2>
-	<p>Fag som tar for seg et høyere abstraksjonsnivå av datamaskiners oppbygning enn "Krets- og digital-teknikk".</p>
-
-    <h2 id="proglab2"><a href="https://www.ntnu.no/studier/emner/TDT4113">Programmeringsprosjekt for datateknologi (ProgLab 2)</a></h2>
-	<p>Motivasjonsfag for studenter på datateknologi hvor en skal lære at programmering er både gøy og nyttig.</p>
-
+<footer>
+	<hr/>
+	<address>
+		<span>Vemund Mehl Santi</span> &middot;
+		Elgesetergate 27, 7030 Trondheim  &middot;
+		918 89 863
+	</address>
+</footer>
 </body>
 </html>
