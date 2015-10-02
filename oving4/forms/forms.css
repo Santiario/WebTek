@@ -1,0 +1,13 @@
+
+#startDate{
+    width:215px;
+}
+
+input:invalid{
+    border-color: red;
+    box-shadow: red;
+}
+
+.asterisk{
+    color: red;
+}
