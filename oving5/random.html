@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beskrivelse av webtek</title>
+    <script>
+        var liste = ['morsomt', 'gøyalt', 'interessant', 'givende', 'lærerikt', 'nyttig', 'flott', 'opplysende',
+            'artig', 'grensesprengende', 'tankeblåsende'];
+        function insertWord(){
+            document.getElementById('beskrivelse').innerHTML = liste[Math.floor(Math.random()*liste.length)];
+        }
+        window.addEventListener("load", insertWord);
+    </script>
+</head>
+<body>
+<header>
+    <h1>Beskrivelse av webtek</h1>
+</header>
+<section>
+    <p>
+        Webtek er et <span id="beskrivelse"></span> fag.
+    </p>
+</section>
+</body>
+</html>
