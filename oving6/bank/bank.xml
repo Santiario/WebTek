@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bank SYSTEM "bank.dtd">
+<!DOCTYPE bank
+[
+        <!ELEMENT bank (accounts,customers,customer_accounts)>
+        <!ELEMENT accounts (savings_accounts, checking_accounts)>
+        <!ELEMENT savings_accounts (savings_account*)>
+        <!ELEMENT checking_accounts (checking_account*)>
+        <!ELEMENT checking_account (balance)>
+        <!ELEMENT savings_account (balance)>
+        <!ELEMENT balance (#PCDATA)>
+        <!ELEMENT customers (customer*)>
+        <!ELEMENT customer (name,address)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT address (#PCDATA)>
+        <!ELEMENT customer_accounts (customer_account*)>
+        <!ELEMENT customer_account EMPTY>
+
+        <!ATTLIST checking_account id ID #REQUIRED>
+        <!ATTLIST customer id ID #REQUIRED>
+        <!ATTLIST savings_account
+                id ID #REQUIRED
+                interest CDATA #REQUIRED>
+        <!ATTLIST customer_account
+                customer_id CDATA #REQUIRED
+                account_id CDATA #REQUIRED>
+        ]>
 <bank>
 
     <accounts>
@@ -27,7 +51,6 @@
             </checking_account>
         </checking_accounts>
     </accounts>
-  
     <customers>
         <customer id="c1">
             <name>Ben Richerdson</name>
