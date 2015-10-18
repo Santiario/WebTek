@@ -2,11 +2,11 @@
 
 <xs:schema
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.folk.ntnu.no/vemundms/"
-        xmlns="http://www.folk.ntnu.no/vemundms/"
+        targetNamespace="http://folk.ntnu.no/vemundms/"
+        xmlns="http://folk.ntnu.no/vemundms/"
         elementFormDefault="qualified">
 
-    <xs:complexType name="account">
+    <xs:complexType name="checking_account">
         <xs:sequence>
             <xs:element name="balance" type="xs:integer">
                 <xs:simpleType>
@@ -26,7 +26,7 @@
     </xs:complexType>
     <xs:complexType name="savings_account">
         <xs:complexContent>
-            <xs:extension base="account">
+            <xs:extension base="checking_account">
                 <xs:attribute name="interest" type="xs:decimal"/>
             </xs:extension>
         </xs:complexContent>
@@ -41,14 +41,14 @@
                             <xs:element name="savings_accounts">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="savings_account" type="savings_account" maxOccurs="unbounded"/>
+                                        <xs:element name="savings_account" type="savings_account" minOccurs="0" maxOccurs="unbounded"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="checking_accounts">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="checking_account" type="account" maxOccurs="unbounded"/>
+                                        <xs:element name="checking_account" type="checking_account" minOccurs="0" maxOccurs="unbounded"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -58,7 +58,7 @@
                 <xs:element name="customers">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="customer" maxOccurs="unbounded">
+                            <xs:element name="customer" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="name" type="xs:string"/>
@@ -79,7 +79,7 @@
                 <xs:element name="customer_accounts">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="customer_account" maxOccurs="unbounded">
+                            <xs:element name="customer_account" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="customer_id" use="required"/><!--TODO-->
                                     <xs:attribute name="account_id" use="required"/><!--TODO-->
