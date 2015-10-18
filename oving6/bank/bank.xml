@@ -24,8 +24,11 @@
                 customer_id CDATA #REQUIRED
                 account_id CDATA #REQUIRED>
         ]>
-<bank>
 
+<bank
+xmlns="http://www.folk.ntnu.no/vemundms/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.folk.ntnu.no/vemundms/ bank.xsd">
     <accounts>
         <savings_accounts>
             <savings_account id="a1" interest="0.03">
