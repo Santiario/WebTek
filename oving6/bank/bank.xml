@@ -54,6 +54,7 @@ xsi:schemaLocation="http://www.folk.ntnu.no/vemundms/ bank.xsd">
             </checking_account>
         </checking_accounts>
     </accounts>
+
     <customers>
         <customer id="c1">
             <name>Ben Richerdson</name>
@@ -70,12 +71,12 @@ xsi:schemaLocation="http://www.folk.ntnu.no/vemundms/ bank.xsd">
         </customer>
     </customers>
   
-  <customer_accounts>
-    <customer_account customer_id="c1" account_id="a2"/>
-    <customer_account customer_id="c1" account_id="a3"/>
-    <customer_account customer_id="c2" account_id="a4"/>
-    <customer_account customer_id="c3" account_id="a1"/>
-    <customer_account customer_id="c3" account_id="a5"/>
-  </customer_accounts>
+    <customer_accounts>
+        <customer_account customer_id="c1" account_id="a2"/>
+        <customer_account customer_id="c1" account_id="a3"/>
+        <customer_account customer_id="c2" account_id="a4"/>
+        <customer_account customer_id="c3" account_id="a1"/>
+        <customer_account customer_id="c3" account_id="a5"/>
+    </customer_accounts>
   
 </bank>

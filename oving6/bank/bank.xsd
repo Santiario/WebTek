@@ -5,7 +5,6 @@
         targetNamespace="http://www.folk.ntnu.no/vemundms/"
         xmlns="http://www.folk.ntnu.no/vemundms/"
         elementFormDefault="qualified">
-    <xs:element name="savings_account" type="account"/>
 
     <xs:complexType name="account">
         <xs:sequence>
@@ -17,15 +16,79 @@
                 </xs:simpleType>
             </xs:element>
         </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required">
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:pattern value="a([0-9])+"/><!--TODO-->
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="savings_account">
+        <xs:complexContent>
+            <xs:extension base="account">
+                <xs:attribute name="interest" type="xs:decimal"/>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
-    <xs:element name="bank" type="xs:complexType">
-        <xs:sequence>
-            <xs:element name="accounts">
-
-            </xs:element>
-        </xs:sequence>
-
+    <xs:element name="bank">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accounts">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="savings_accounts">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="savings_account" type="savings_account" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="checking_accounts">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="checking_account" type="account" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="customers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="customer" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="address" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction>
+                                                <xs:pattern value="c([0-9])+"/><!--TODO-->
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="customer_accounts">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="customer_account" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="customer_id" use="required"/><!--TODO-->
+                                    <xs:attribute name="account_id" use="required"/><!--TODO-->
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
     </xs:element>
-
 </xs:schema>
