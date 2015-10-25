@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+<header>
+    <h1>To-Do List</h1>
+</header>
+<section>
+    <div id="taskList">
+
+    </div>
+    <button onclick="deleteTasks()">Delete all selected tasks</button>
+    <form >
+        <label><input id="input" type="text"/></label>
+        <button type="button" onclick="addTask()">Add Task</button>
+    </form>
+</section>
+<footer>
+    <script>
+        var id = 0;
+        addTask = function(){
+            var value = document.getElementById('input').value;
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+
+            var label = document.createElement('label');
+            label.id = id.toString();
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(value));
+            label.appendChild(document.createElement('br'));
+
+            var container = document.getElementById('taskList');
+            container.appendChild(label);
+            id++;
+        };
+        deleteTasks = function(){
+            var tasks = document.getElementById('taskList');
+            var toDelete = [];
+            for(var i = 1; i < tasks.childNodes.length; i+=1){
+                if (tasks.childNodes[i].firstChild.checked){
+                    toDelete.push(tasks.childNodes[i].id);
+                }
+            }
+            for(i = 0; i < toDelete.length; i++){
+                document.getElementById('taskList').removeChild(document.getElementById(toDelete[i]));
+            }
+        }
+    </script>
+</footer>
+
+</body>
+</html>
