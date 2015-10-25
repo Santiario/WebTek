@@ -19,7 +19,7 @@
         <xs:attribute name="id" type="xs:string" use="required">
             <xs:simpleType>
                 <xs:restriction>
-                    <xs:pattern value="a([0-9])+"/><!--TODO-->
+                    <xs:pattern value="a([0-9])+"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -67,7 +67,7 @@
                                     <xs:attribute name="id" use="required">
                                         <xs:simpleType>
                                             <xs:restriction>
-                                                <xs:pattern value="c([0-9])+"/><!--TODO-->
+                                                <xs:pattern value="c([0-9])+"/>
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:attribute>
@@ -81,8 +81,8 @@
                         <xs:sequence>
                             <xs:element name="customer_account" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
-                                    <xs:attribute name="customer_id" use="required"/><!--TODO-->
-                                    <xs:attribute name="account_id" use="required"/><!--TODO-->
+                                    <xs:attribute name="customer_id" use="required"/>
+                                    <xs:attribute name="account_id" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
