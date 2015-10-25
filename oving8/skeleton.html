@@ -19,6 +19,18 @@
                 square.fillRect(300,200,200,200);
 
 
+                loadImage = function(callback) {
+                    var image = new Image(100, 100);
+                    image.onload = function() {
+                        callback(image);
+                    };
+                    image.src = 'doge.jpg';
+                };
+                loadImage(function(image){
+                    canvas.getContext('2d').drawImage(image, 100, 100);
+                });
+
+
                 
             });
         </script>
