@@ -24,7 +24,7 @@
                 customer_id CDATA #REQUIRED
                 account_id CDATA #REQUIRED>
         ]>
-
+<!-- NOTE: DTD does not show up in some browsers. Open the document in a text editor instead -->
 <bank
 xmlns="http://folk.ntnu.no/vemundms/"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
