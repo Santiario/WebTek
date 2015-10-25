@@ -4,16 +4,27 @@
         <meta charset="UTF-8">
         <title>Graphics and animation using HTML5 Canvas</title>
         <style>
-            #the-canvas { border: 1px dashed gray }   
+            #canvas { border: 1px dashed gray }
         </style>
         <script>
             addEventListener('load', function() {
-                // TODO: write code here
+                var canvas = document.getElementById('canvas');
+                var circle = canvas.getContext('2d');
+                circle.beginPath();
+                circle.arc(100,100,100,0,2 * Math.PI);
+                circle.fillStyle = '#FF0000';
+                circle.fill();
+                var square = canvas.getContext('2d');
+                square.fillStyle = '#0000FF';
+                square.fillRect(300,200,200,200);
+
+
+                
             });
         </script>
     </head>
     <body>
-        <canvas id="the-canvas" width="500" height="400">   
+        <canvas id="canvas" width="500" height="400">
             Your browser does not support the &lt;canvas&gt; element.
         </canvas>
     </body>
