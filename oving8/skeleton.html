@@ -8,30 +8,41 @@
         </style>
         <script>
             addEventListener('load', function() {
-                var canvas = document.getElementById('canvas');
-                var circle = canvas.getContext('2d');
-                circle.beginPath();
-                circle.arc(100,100,100,0,2 * Math.PI);
-                circle.fillStyle = '#FF0000';
-                circle.fill();
-                var square = canvas.getContext('2d');
-                square.fillStyle = '#0000FF';
-                square.fillRect(300,200,200,200);
-
-
                 loadImage = function(callback) {
-                    var image = new Image(100, 100);
+                    image = new Image(80, 80);
                     image.onload = function() {
-                        callback(image);
+                        callback();
                     };
                     image.src = 'doge.jpg';
                 };
-                loadImage(function(image){
-                    canvas.getContext('2d').drawImage(image, 100, 100);
+                loadImage(function(){
+                    path = {centerX: 210, centerY: 160, radius: 160, angle: 0};
+                    window.setInterval(function(){
+                        var canvas = document.getElementById('canvas');
+
+                        var clear = canvas.getContext('2d');
+                        clear.fillStyle = '#FFFFFF';
+                        clear.fillRect(0,0,canvas.width, canvas.height);
+
+                        var circle = canvas.getContext('2d');
+                        circle.beginPath();
+                        circle.arc(100,100,100,0,2 * Math.PI);
+                        circle.fillStyle = '#FF0000';
+                        circle.fill();
+
+                        var square = canvas.getContext('2d');
+                        square.fillStyle = '#0000FF';
+                        square.fillRect(300,200,200,200);
+
+                        canvas.getContext('2d').drawImage(image, path.centerX + Math.cos(path.angle) * path.radius, path.centerY + Math.sin(path.angle) * path.radius);
+
+                        path.angle += 0.05;
+                    }, 20)
                 });
 
 
-                
+
+
             });
         </script>
     </head>
